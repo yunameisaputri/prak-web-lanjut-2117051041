@@ -12,23 +12,22 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <img src="https://avatars.githubusercontent.com/u/92523388?v=4" width="200px" class="img-fluid rounded-circle" alt="Foto Profil">
+                <img src="<?=$user['foto']?? '<default-foto>' ?>" width="200px" class="img-fluid rounded-circle" alt="Foto Profil">
             </div>
             <div class="col-md-8">
                 <table class="table">
                 <tr>
                 <td>Nama :</td>
-                <td><?=$nama?></td>
+                <td><?= $user['nama'] ?></td>
             </tr>
             <tr>
                 <td>NPM :</td>
-                <td><?=$npm?></td>
+                <td><?= $user['npm'] ?></td>
             </tr>
             <tr>
                 <td>Kelas :</td>
-                <td><?=$kelas?></td>
+                <td><?= $user['nama_kelas'] ?></td>
             </tr>
-
                 </table>
             </div>
         </div>
