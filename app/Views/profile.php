@@ -2,11 +2,10 @@
 <?= $this->section('content')?>
 <body style="background-color: #bec5cb;"> 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Profile Page</a>
     </nav>
     
     <div class="jumbotron text-center">
-        <h1 class="display-4">Selamat Datang di Profil Anda</h1>
+        <h1 class="display-4">Detail Profile</h1>
     </div>
     
     <div class="container">

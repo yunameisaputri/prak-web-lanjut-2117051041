@@ -1,7 +1,9 @@
 <?= $this->extend('layouts/app')?>
 <?= $this->section('content')?>
-    <h2>List User</h2> 
-    <a href="<?= base_url('user/create')?>">Tambah Data</a>
+<div class="container">
+<h2>List User</h2> 
+    <button class="btn btn-success" onclick="window.location.href='<?= base_url('user/create') ?>';">Tambah Data</button>
+
     <table class="table align-middle">
             <thead>
             <tr>
@@ -22,12 +24,17 @@
                         <td><?= $user['nama'] ?></td>
                         <td><?= $user['npm'] ?></td>
                         <td><?= $user['nama_kelas'] ?></td>
-                        <td><?= $user['foto']?></td>
+                        <td><img src="<?=$user['foto']?? '<default-foto>' ?>" width="100px"; height="100px" class="img-fluid rounded-circle" alt="Foto Profil"></td>
                         <td></td>
                         <td>
-                            <a href="<?= base_url('user/'. $user['id']) ?>">Detail</a>
-                            <button type="button">Edit</button>
-                            <button type="button">Delete</button>
+                            <a href="<?= base_url('user/'. $user['id']) ?>" class="btn btn-info">Detail</a>
+                            <a href="<?= base_url('user/'. $user['id']. '/edit') ?>" class="btn btn-primary">Edit</a>
+                            <form action="<?= base_url('user/' . $user['id']) ?>" method="post">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <?= csrf_field() ?>
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+
                         </td>
                     </tr>
                 <?php
@@ -35,4 +42,5 @@
                 ?>
             </tbody>
     </table>
+</div>
 <?= $this->endSection() ?>
